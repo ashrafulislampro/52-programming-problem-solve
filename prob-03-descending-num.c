@@ -2,7 +2,7 @@
 
 int main()
 {
-    int num = 1000, i;
+    int i;
     for (i = 1000; i >= 1; i--)
     {
         if (i % 5 == 0 && i != 1000)
