@@ -19,41 +19,33 @@ int main()
         {
             if (arr[i] < arr[i - 1])
             {
-                // if (arr[i] < arr[i + 1])
-                // {
-                    sorted = 0;
-                    break;
-                // }
-                // else
-                // {
-                //     sorted = 1;
-                //     break;
-                // }
-            }else if(arr[i - 1] < arr[i]){
                 sorted = 0;
                 break;
             }
-            // else
-            // {
-            //     sorted = 1;
-            //     break;
-            // }
         }
-        // for (i = 0; i < n; i++)
-        // {
-        //     if (arr[i] < arr[i + 1])
-        //     {
-        //         sorted = 0;
-        //         break;
-        //     }
-        // }
         if (sorted)
         {
             cout << "YES" << endl;
         }
         else
         {
-            cout << "NO" << endl;
+            sorted = 1;
+            for (i = 0; i < n; i++)
+            {
+                if (arr[i] < arr[i + 1])
+                {
+                    sorted = 0;
+                    break;
+                }
+            }
+            if (sorted)
+            {
+                cout << "YES" << endl;
+            }
+            else
+            {
+                cout << "NO" << endl;
+            }
         }
     }
     return 0;
