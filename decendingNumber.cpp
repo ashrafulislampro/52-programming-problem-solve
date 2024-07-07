@@ -1,23 +1,21 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-
-    int i;
-    for (i = 1; i <= 1000; i++)
+    int i, j;
+    for (i = 1000, j = 0; i >= 1; i--)
     {
         cout << i;
-        if (i % 5 != 0)
+        j++;
+        if (j % 5 != 0)
         {
             cout << " ";
         }
-        if (i % 5 == 0)
+        if (j % 5 == 0)
         {
             cout << endl;
         }
     }
-
     return 0;
 }
