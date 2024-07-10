@@ -1,52 +1,35 @@
 #include <iostream>
+#include <cstdio>
+#include <algorithm>
+
 using namespace std;
 
 int main()
 {
-    int T, n, i, sorted;
+    int T, size, i, num, missing, arr[100001];
     cin >> T;
     while (T--)
     {
-        sorted = 1;
-        cin >> n;
-        int *arr = new int[n];
-        for (i = 0; i < n; i++)
+        scanf("%d", &size);
+        for (i = 1; i <= size; i++)
         {
-            cin >> arr[i];
+            arr[i] = 0;
         }
-
-        for (i = 1; i < n; i++)
+        for (i = 0; i < size; i++)
         {
-            if (arr[i] < arr[i - 1])
+            scanf("%d", &num);
+            arr[num] = 1;
+        }
+        for (i = 1; i <= size; i++)
+        {
+            if (arr[i] == 0)
             {
-                sorted = 0;
+                missing = i;
                 break;
             }
         }
-        if (sorted)
-        {
-            cout << "YES" << endl;
-        }
-        else
-        {
-            sorted = 1;
-            for (i = 0; i < n; i++)
-            {
-                if (arr[i] < arr[i + 1])
-                {
-                    sorted = 0;
-                    break;
-                }
-            }
-            if (sorted)
-            {
-                cout << "YES" << endl;
-            }
-            else
-            {
-                cout << "NO" << endl;
-            }
-        }
+        printf("%d\n", missing);
     }
+
     return 0;
 }
