@@ -1,35 +1,19 @@
-#include <iostream>
-#include <cstdio>
+#include <bits/stdc++.h>
 using namespace std;
-
-long long gcd(long long a, long long b)
-{
-    long long temp;
-    while (b != 0)
-    {
-        temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
 int main()
 {
     int T;
-    scanf("%d", &T);
-
-    long long a, b, c, i, lcm;
+    unsigned long long A, B, C, i, j;
+    cin >> T;
     while (T--)
     {
-        scanf("%lld%lld%lld", &a, &b, &c);
-        lcm = (a * b) / gcd(a, b);
-       
-        for(i = lcm; i <= c; i+=lcm){
-            printf("%lld\n", i);
+        cin >> A >> B >> C;
+        for (j = A * B; j <= C; j += (A * B))
+        {
+
+            cout << j << endl;
         }
-        
-        printf("\n");
+        cout << endl;
     }
     return 0;
 }
