@@ -1,22 +1,24 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
 {
     int T;
-    unsigned long int num, i;
+    unsigned long int num, i, sqrt_num;
     unsigned long long sum;
     cin >> T;
     while (T--)
     {
-        sum = 0;
+        sum = 1;
         cin >> num;
-        for (i = 1; i < num; i++)
+        sqrt_num = sqrt(num);
+        for (i = 2; i <= sqrt_num; i++)
         {
 
             if (num % i == 0)
             {
-                sum += i;
+                sum = sum + i + num / i;
             }
         }
         if (num == sum)
